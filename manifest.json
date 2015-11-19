@@ -1,0 +1,22 @@
+{
+	"name":"CS2505",
+	"description":"Rearranges the HW assignments to show you the most recent one.",
+	"version":"1",
+	"manifest_version":2,
+	"web_accessible_resources": [
+		"font-awesome-4.4.0/fonts/*"
+	],
+	"content_scripts": [
+		{
+			"matches": ["http://curator.cs.vt.edu:8080/S2505/Client/home.jsp"],
+			"js": ["jquery-2.1.4.min.js", "curator.js"]
+		},
+		{
+			"matches": ["http://courses.cs.vt.edu/~cs2505/fall2015/*",
+						"http://courses.cs.vt.edu/~cs2505/fall2015/Assignments.html"],
+			"js": ["jquery-2.1.4.min.js", "notify.min.js", "assignments.js"],
+			"css": ["font-awesome-4.4.0/css/font-awesome.min.css"],
+			"all_frames": true
+		}
+	]
+}
